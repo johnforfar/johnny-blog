@@ -319,16 +319,18 @@ export default function PostsPage() {
       
       <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {filteredAndSortedPosts.map((post) => (
-          <div key={post.slug} className="border rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow max-w-full overflow-hidden">
+          <div key={post.slug} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow max-w-full">
             {post.thumbnailExists && post.coverImage && (
               <Link href={`/posts/${post.slug}`} className="block">
                 <img
                   src={`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006'}/images/${post.coverImage}`}
                   alt={post.title}
-                  className="w-full aspect-video object-cover rounded-lg mb-4 hover:opacity-90 transition-opacity cursor-pointer"
+                  className="w-full aspect-video object-cover hover:opacity-90 transition-opacity cursor-pointer"
                 />
               </Link>
             )}
+            
+            <div className="p-4 sm:p-6">
             
             <h2 className="text-xl font-semibold mb-2">
               <Link href={`/posts/${post.slug}`} className="hover:underline">
@@ -374,6 +376,7 @@ export default function PostsPage() {
                 <Link href={`/posts/${post.slug}`}>Read More</Link>
               </Button>
               <Share text={`Check out this post: ${post.title} - ${post.summary}`} />
+            </div>
             </div>
           </div>
         ))}

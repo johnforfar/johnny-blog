@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/context/providers";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { title, description } from "@/lib/metadata";
 
-const inter = localFont({
-  src: "./InterVariable.ttf",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title,

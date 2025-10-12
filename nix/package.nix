@@ -1,11 +1,11 @@
 { pkgs, lib }:
 pkgs.buildNpmPackage {
-  pname = "datagraph";
+  pname = "johnny-blog-miniapp";
   version = "1.0.0";
-  src = ./datagraph-app;
+  src = ./mini-app;
 
   npmDeps = pkgs.importNpmLock {
-    npmRoot = ./datagraph-app;
+    npmRoot = ./mini-app;
   };
   npmConfigHook = pkgs.importNpmLock.npmConfigHook;
 
@@ -34,7 +34,7 @@ pkgs.buildNpmPackage {
     chmod +x $out/share/homepage/server.js
 
     # we set a default port to support "nix run ..."
-    makeWrapper $out/share/homepage/server.js $out/bin/datagraph \
+    makeWrapper $out/share/homepage/server.js $out/bin/johnny-blog-miniapp \
       --set-default PORT 3000 \
       --set-default HOSTNAME 0.0.0.0
 
@@ -44,7 +44,7 @@ pkgs.buildNpmPackage {
   doDist = false;
 
   meta = {
-    mainProgram = "datagraph";
-    description = "DataGraph - AI-native content creator platform";
+    mainProgram = "johnny-blog-miniapp";
+    description = "Johnny Blog Mini App running on Xnode!";
   };
 }

@@ -1,5 +1,5 @@
 {
-  description = "DataGraph - AI-native content creator platform";
+  description = "Johnny Blog Mini App running on Xnode!";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

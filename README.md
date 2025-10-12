@@ -1,40 +1,43 @@
-# DataGraph Frontend
+# Johnny Blog Mini App
 
-AI-native content creator platform built on Farcaster Mini Apps and OpenMesh xnodes.
+A Farcaster Mini App for Johnny's Blog running on Xnode!
 
 ## Features
 
-- **Farcaster Mini App** - Native integration with Farcaster social network
-- **AI-Optimized Content** - Structured for both human and AI consumption
-- **Multi-Platform Publishing** - Publish once, distribute everywhere
-- **Memory Graph** - Connected content nodes for enhanced discoverability
-
-## Tech Stack
-
-- Next.js 15 with App Router
-- Farcaster Mini App SDK
-- Tailwind CSS
-- TypeScript
+- 📝 Blog posts with markdown support
+- 🎥 YouTube video integration
+- 🔗 Farcaster sharing and engagement
+- 💰 Tipping functionality
+- 📱 Responsive design
+- 🌙 Dark/light theme support
 
 ## Development
 
 ```bash
+cd mini-app
 npm install
 npm run dev
 ```
 
-## Environment Variables
-
-Create a `.env.local` file:
-
-```env
-NEXT_PUBLIC_URL=http://localhost:3000
-NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
-```
-
 ## Deployment
 
-This frontend is designed to be deployed as a Farcaster Mini App and can be hosted on any platform that supports Next.js.
+This mini app is designed to be deployed on Xnode using the NixOS module:
+
+```nix
+services.johnny-blog-miniapp = {
+  enable = true;
+  port = 3000;
+  url = "https://your-domain.com";
+};
+```
+
+## Backend
+
+The backend API runs separately and provides:
+- Blog post content
+- YouTube video metadata
+- Farcaster integration
+- CSV data storage
 
 ## License
 

@@ -5,7 +5,6 @@ import { Providers } from "@/components/context/providers";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { title, description } from "@/lib/metadata";
-import Link from "next/link";
 
 const inter = localFont({
   src: "./InterVariable.ttf",

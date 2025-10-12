@@ -5,12 +5,12 @@
   ...
 }:
 let
-  cfg = config.services.xnode-miniapp-template;
-  xnode-miniapp-template = pkgs.callPackage ./package.nix { };
+  cfg = config.services.johnny-blog-miniapp;
+  johnny-blog-miniapp = pkgs.callPackage ./package.nix { };
 in
 {
   options = {
-    services.xnode-miniapp-template = {
+    services.johnny-blog-miniapp = {
       enable = lib.mkEnableOption "Enable the nextjs app";
 
       hostname = lib.mkOption {
@@ -79,13 +79,13 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    users.groups.xnode-miniapp-template = { };
-    users.users.xnode-miniapp-template = {
+    users.groups.johnny-blog-miniapp = { };
+    users.users.johnny-blog-miniapp = {
       isSystemUser = true;
-      group = "xnode-miniapp-template";
+      group = "johnny-blog-miniapp";
     };
 
-    systemd.services.xnode-miniapp-template = {
+    systemd.services.johnny-blog-miniapp = {
       wantedBy = [ "multi-user.target" ];
       description = "Mini App.";
       after = [ "network.target" ];
@@ -96,9 +96,9 @@ in
         NEXT_PUBLIC_ACCOUNT_ASSOCIATION = builtins.toJSON cfg.accountAssociation;
       };
       serviceConfig = {
-        ExecStart = "${lib.getExe xnode-miniapp-template}";
-        User = "xnode-miniapp-template";
-        Group = "xnode-miniapp-template";
+        ExecStart = "${lib.getExe johnny-blog-miniapp}";
+        User = "johnny-blog-miniapp";
+        Group = "johnny-blog-miniapp";
         CacheDirectory = "mini-app";
       };
     };

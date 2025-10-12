@@ -1,0 +1,3 @@
+[submodule "datagraph-app/xnode-miniapp-gitfit"]
+	path = datagraph-app/xnode-miniapp-gitfit
+	url = https://github.com/johnforfar/xnode-miniapp-gitfit.git

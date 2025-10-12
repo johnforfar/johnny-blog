@@ -1,8 +1,6 @@
-import { Share } from "@/components/share";
-import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
-import Link from "next/link";
 import { title, description } from "@/lib/metadata";
+import PostsPage from "./posts-page";
 
 export const dynamic = "force-dynamic";
 
@@ -37,22 +35,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home() {
-  return (
-    <main className="flex flex-col gap-8 place-items-center px-4 py-8">
-      <div className="flex flex-col gap-1 place-items-center text-center">
-        <span className="text-2xl">{title}</span>
-        <span className="text-muted-foreground">{description}</span>
-      </div>
-      
-      <div className="flex flex-col gap-3">
-        <Button asChild>
-          <Link href="/posts">View Posts</Link>
-        </Button>
-        <Button asChild>
-          <Link href="/about">About</Link>
-        </Button>
-        <Share text={`Check out ${title} - ${description}`} />
-      </div>
-    </main>
-  );
+  return <PostsPage />;
 }

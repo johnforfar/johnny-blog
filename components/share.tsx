@@ -3,22 +3,22 @@
 import { useMiniAppContext } from "./context/miniapp-provider";
 import { Button } from "./ui/button";
 
-export const dynamic = "force-dynamic";
+export function Share({ text }: { text: string }) {
+  const { sdk, isInMiniApp } = useMiniAppContext();
 
-export function Share({ text, embeds }: { text: string; embeds?: [string] }) {
-  const { sdk } = useMiniAppContext();
-  const appUrl = process.env.NEXT_PUBLIC_URL;
+  if (!isInMiniApp) {
+    return <></>;
+  }
 
   return (
     <Button
       onClick={() => {
         sdk.actions.composeCast({
           text,
-          embeds: embeds ?? (appUrl ? [appUrl] : []),
         });
       }}
     >
-      <span>Share</span>
+      <span>Share on Farcaster</span>
     </Button>
   );
 }

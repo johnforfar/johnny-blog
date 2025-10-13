@@ -27,9 +27,7 @@ export function Tip({ postTitle, postSlug, authorFid }: TipProps) {
         // Use Farcaster Mini App SDK for tipping
         await sdk.actions.composeCast({
           text: `💝 Tip $${amount} to @johnforfar for "${postTitle}"\n\nSupporting great content!`,
-          embeds: [{
-            url: `${window.location.origin}/posts/${postSlug}`,
-          }],
+          embeds: [`${window.location.origin}/posts/${postSlug}`],
         });
       } else {
         // Fallback: Open external payment or show tip options

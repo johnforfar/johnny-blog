@@ -33,7 +33,7 @@ export function Share({ text, url, title }: ShareProps) {
     try {
       await sdk.actions.composeCast({
         text: `${text}${url ? `\n\n${url}` : ''}`,
-        embeds: url ? [{ url }] : undefined,
+        embeds: url ? [url] : undefined,
       });
     } catch (error) {
       console.error('Failed to share on Farcaster:', error);

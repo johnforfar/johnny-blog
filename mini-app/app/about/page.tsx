@@ -12,7 +12,7 @@ export default function About() {
     <main className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="flex flex-col gap-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">About Johnny's Blog</h1>
+          <h1 className="text-4xl font-bold mb-4">About Johnny&apos;s Blog</h1>
           <p className="text-lg text-muted-foreground">
             AI-powered insights on Solana blockchain development, technology, and innovation.
           </p>
@@ -21,7 +21,7 @@ export default function About() {
         <div className="prose prose-lg max-w-none">
           <h2>Our Mission</h2>
           <p>
-            We're dedicated to sharing knowledge and building the future of Web3. Through detailed tutorials, 
+            We&apos;re dedicated to sharing knowledge and building the future of Web3. Through detailed tutorials, 
             insights, and analysis, we help developers and enthusiasts understand the Solana ecosystem and 
             blockchain technology.
           </p>

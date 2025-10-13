@@ -7,9 +7,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Alert, AlertDescription } from "./ui/alert";
 import { Loader2, Youtube, Plus } from "lucide-react";
 
+interface VideoData {
+  title: string;
+  duration: string;
+  description?: string;
+  thumbnail?: string;
+  viewCount?: number;
+}
+
 interface ScrapeResult {
   success: boolean;
-  video?: any;
+  video?: VideoData;
   slug?: string;
   filename?: string;
   message?: string;

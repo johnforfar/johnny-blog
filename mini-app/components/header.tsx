@@ -7,7 +7,7 @@ export function Header() {
     <header className="flex flex-col sm:flex-row h-auto sm:h-16 items-center justify-between border-b px-2 sm:px-4 py-2 sm:py-0 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
       <div className="flex items-center space-x-4 mb-2 sm:mb-0">
         <Link href="/" className="text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-          Johnny's Blog
+              Johnny&apos;s Blog
         </Link>
       </div>
       <nav className="flex items-center space-x-1 sm:space-x-2">

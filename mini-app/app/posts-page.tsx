@@ -122,7 +122,7 @@ export default function PostsPage() {
 
   // Filter and sort posts
   const filteredAndSortedPosts = useMemo(() => {
-    let filtered = posts.filter(post => {
+        const filtered = posts.filter(post => {
       // Filter by tag
       const tagMatch = !selectedTag || post.tags.some(tag => {
         // Handle stringified arrays
@@ -175,7 +175,7 @@ export default function PostsPage() {
   if (loading) {
     return (
       <main className="container mx-auto px-2 sm:px-4 py-8 max-w-7xl">
-        <h1 className="text-3xl font-bold mb-8 text-foreground">Johnny's Blog Posts</h1>
+        <h1 className="text-3xl font-bold mb-8 text-foreground">Johnny&apos;s Blog Posts</h1>
         <div className="text-center">Loading posts...</div>
       </main>
     );
@@ -184,7 +184,7 @@ export default function PostsPage() {
   if (error) {
     return (
       <main className="container mx-auto px-2 sm:px-4 py-8 max-w-7xl">
-        <h1 className="text-3xl font-bold mb-8 text-foreground">Johnny's Blog Posts</h1>
+        <h1 className="text-3xl font-bold mb-8 text-foreground">Johnny&apos;s Blog Posts</h1>
         <div className="text-center text-red-500">Error: {error}</div>
         <div className="text-center mt-4">
           <Button asChild>
@@ -200,7 +200,7 @@ export default function PostsPage() {
       {/* Tagline */}
       <div className="text-center mb-6">
         <p className="text-muted-foreground text-sm italic">
-        Sharing knowledge & BUIDLing in AI & Web3 technology.
+            Sharing knowledge &amp; BUIDLing in AI &amp; Web3 technology.
         </p>
       </div>
       

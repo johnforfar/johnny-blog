@@ -93,6 +93,7 @@ in
         HOSTNAME = cfg.hostname;
         PORT = toString cfg.port;
         NEXT_PUBLIC_URL = cfg.url;
+        NEXT_PUBLIC_BACKEND_URL = "http://localhost:3006"; # Internal backend communication
         NEXT_PUBLIC_ACCOUNT_ASSOCIATION = builtins.toJSON cfg.accountAssociation;
       };
       serviceConfig = {

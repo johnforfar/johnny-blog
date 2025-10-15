@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/context/providers";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { title, description } from "@/lib/metadata";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title,
@@ -20,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body className="font-sans antialiased">
         <Providers>
           <div className="font-sans min-h-screen flex flex-col place-content-between">
             <Header />

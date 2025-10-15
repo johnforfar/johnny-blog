@@ -29,7 +29,7 @@
       packages = eachSystem (
         { pkgs, ... }:
         {
-          default = pkgs.callPackage ./nix/package.nix { src = self; };
+          default = pkgs.callPackage ./nix/package.nix { };
         }
       );
 

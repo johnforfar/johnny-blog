@@ -4,11 +4,19 @@ import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
   return (
-    <header className="flex flex-col sm:flex-row h-auto sm:h-16 items-center justify-between border-b px-2 sm:px-4 py-2 sm:py-0 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="flex items-center space-x-4 mb-2 sm:mb-0">
+    <header className="flex flex-col lg:flex-row items-center justify-between border-b px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
+      {/* Left side - Title */}
+      <div className="mb-3 lg:mb-0">
         <Link href="/" className="text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-              Johnny&apos;s Blog
+          Johnny&apos;s Blog
         </Link>
+      </div>
+      
+      {/* Center - Tagline */}
+      <div className="mb-3 lg:mb-0 lg:flex-1 lg:flex lg:justify-center">
+        <p className="text-muted-foreground text-xs sm:text-sm italic text-center">
+          Sharing knowledge &amp; BUIDLing in AI &amp; Web3 technology.
+        </p>
       </div>
       <nav className="flex items-center space-x-1 sm:space-x-2">
         <ThemeToggle />

@@ -4,7 +4,7 @@ Create a `.env.local` file in the frontend directory with these variables:
 
 ```bash
 # Backend Configuration
-NEXT_PUBLIC_BACKEND_URL=http://localhost:3006
+NEXT_PUBLIC_BACKEND_URL=http://localhost:3007
 
 # For production, set to your actual backend URL:
 # NEXT_PUBLIC_BACKEND_URL=https://your-backend-domain.com

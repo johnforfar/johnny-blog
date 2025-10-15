@@ -122,7 +122,7 @@ export default function PostsPage() {
 
   // Filter and sort posts
   const filteredAndSortedPosts = useMemo(() => {
-        const filtered = posts.filter(post => {
+    let filtered = posts.filter(post => {
       // Filter by tag
       const tagMatch = !selectedTag || post.tags.some(tag => {
         // Handle stringified arrays
@@ -175,7 +175,7 @@ export default function PostsPage() {
   if (loading) {
     return (
       <main className="container mx-auto px-2 sm:px-4 py-8 max-w-7xl">
-        <h1 className="text-3xl font-bold mb-8 text-foreground">Johnny&apos;s Blog Posts</h1>
+        <h1 className="text-3xl font-bold mb-8 text-foreground">Johnny's Blog Posts</h1>
         <div className="text-center">Loading posts...</div>
       </main>
     );
@@ -184,7 +184,7 @@ export default function PostsPage() {
   if (error) {
     return (
       <main className="container mx-auto px-2 sm:px-4 py-8 max-w-7xl">
-        <h1 className="text-3xl font-bold mb-8 text-foreground">Johnny&apos;s Blog Posts</h1>
+        <h1 className="text-3xl font-bold mb-8 text-foreground">Johnny's Blog Posts</h1>
         <div className="text-center text-red-500">Error: {error}</div>
         <div className="text-center mt-4">
           <Button asChild>
@@ -197,72 +197,79 @@ export default function PostsPage() {
 
   return (
     <main className="container mx-auto px-2 sm:px-4 py-8 max-w-7xl">
+      {/* Tagline */}
+      <div className="text-center mb-6">
+        <p className="text-muted-foreground text-sm italic">
+        John Forfar - Sharing knowledge & BUIDLing in AI & Web3 technology.
+        </p>
+      </div>
+      
       {/* Compact Filter Bar */}
-      <div className="mb-6 px-2 sm:px-0">
+      <div className="mb-6 p-2 sm:p-3 bg-gray-50 dark:bg-gray-800 rounded-lg mx-2 sm:mx-0 border border-gray-200 dark:border-gray-700">
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-2 sm:items-center sm:justify-between">
           {/* Category Filters */}
           <div className="flex flex-wrap gap-1 justify-center sm:justify-start">
             <Button
-              variant={selectedCategory === "" ? "secondary" : "ghost"}
+              variant={selectedCategory === "" ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory("")}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               All
             </Button>
             <Button
-              variant={selectedCategory === "solana-news" ? "secondary" : "ghost"}
+              variant={selectedCategory === "solana-news" ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory("solana-news")}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               News
             </Button>
             <Button
-              variant={selectedCategory === "solana-defi" ? "secondary" : "ghost"}
+              variant={selectedCategory === "solana-defi" ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory("solana-defi")}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               DeFi
             </Button>
             <Button
-              variant={selectedCategory === "solana-tutorials" ? "secondary" : "ghost"}
+              variant={selectedCategory === "solana-tutorials" ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory("solana-tutorials")}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               Tutorials
             </Button>
             <Button
-              variant={selectedCategory === "solana-projects" ? "secondary" : "ghost"}
+              variant={selectedCategory === "solana-projects" ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory("solana-projects")}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               Projects
             </Button>
             <Button
-              variant={selectedCategory === "solana-ai" ? "secondary" : "ghost"}
+              variant={selectedCategory === "solana-ai" ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory("solana-ai")}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               AI
             </Button>
             <Button
-              variant={selectedCategory === "solana-ecosystem" ? "secondary" : "ghost"}
+              variant={selectedCategory === "solana-ecosystem" ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory("solana-ecosystem")}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               Ecosystem
             </Button>
             <Button
-              variant={selectedCategory === "youtube" ? "secondary" : "ghost"}
+              variant={selectedCategory === "youtube" ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory("youtube")}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               YouTube
             </Button>
@@ -273,7 +280,7 @@ export default function PostsPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as "date" | "title")}
-              className="px-2 py-1 bg-transparent border border-muted-foreground/20 rounded text-xs text-muted-foreground focus:outline-none focus:ring-1 focus:ring-muted-foreground/50"
+              className="px-2 py-1 border border-gray-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-blue-500"
             >
               <option value="date">Date</option>
               <option value="title">Title</option>
@@ -281,13 +288,13 @@ export default function PostsPage() {
             <select
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
-              className="px-2 py-1 bg-transparent border border-muted-foreground/20 rounded text-xs text-muted-foreground focus:outline-none focus:ring-1 focus:ring-muted-foreground/50"
+              className="px-2 py-1 border border-gray-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-blue-500"
             >
               <option value="desc">↓</option>
               <option value="asc">↑</option>
             </select>
             <Button
-              variant="ghost"
+              variant="outline"
               size="sm"
               onClick={() => {
                 setSelectedTag("");
@@ -295,7 +302,7 @@ export default function PostsPage() {
                 setSortBy("date");
                 setSortOrder("desc");
               }}
-              className="text-xs px-2 py-1 text-muted-foreground hover:text-foreground"
+              className="text-xs px-2 py-1"
             >
               Clear
             </Button>
@@ -312,18 +319,16 @@ export default function PostsPage() {
       
       <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {filteredAndSortedPosts.map((post) => (
-          <div key={post.slug} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow max-w-full">
+          <div key={post.slug} className="border rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow max-w-full overflow-hidden">
             {post.thumbnailExists && post.coverImage && (
               <Link href={`/posts/${post.slug}`} className="block">
                 <img
                   src={`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006'}/images/${post.coverImage}`}
                   alt={post.title}
-                  className="w-full aspect-video object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                  className="w-full aspect-video object-cover rounded-lg mb-4 hover:opacity-90 transition-opacity cursor-pointer"
                 />
               </Link>
             )}
-            
-            <div className="p-4 sm:p-6">
             
             <h2 className="text-xl font-semibold mb-2">
               <Link href={`/posts/${post.slug}`} className="hover:underline">
@@ -369,7 +374,6 @@ export default function PostsPage() {
                 <Link href={`/posts/${post.slug}`}>Read More</Link>
               </Button>
               <Share text={`Check out this post: ${post.title} - ${post.summary}`} />
-            </div>
             </div>
           </div>
         ))}

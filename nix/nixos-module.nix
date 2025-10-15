@@ -24,8 +24,8 @@ in
 
       port = lib.mkOption {
         type = lib.types.port;
-        default = 3000;
-        example = 3000;
+        default = 3006;
+        example = 3006;
         description = ''
           The port under which the app should be accessible.
         '';

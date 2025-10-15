@@ -39,7 +39,7 @@ export function YouTubeScraperAdmin() {
     setResult(null);
 
     try {
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006';
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3007';
       const response = await fetch(`${backendUrl}/api/youtube/create-post`, {
         method: 'POST',
         headers: {

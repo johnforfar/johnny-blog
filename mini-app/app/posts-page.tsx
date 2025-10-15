@@ -29,7 +29,7 @@ export default function PostsPage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006';
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3007';
         const currentDomain = window.location.hostname;
         const apiUrl = `${backendUrl}/api/posts?domain=${encodeURIComponent(currentDomain)}`;
         console.log('Fetching posts from:', apiUrl);
@@ -316,7 +316,7 @@ export default function PostsPage() {
             {post.thumbnailExists && post.coverImage && (
               <Link href={`/posts/${post.slug}`} className="block">
                 <img
-                  src={`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006'}/images/${post.coverImage}`}
+                  src={`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3007'}/images/${post.coverImage}`}
                   alt={post.title}
                   className="w-full aspect-video object-cover hover:opacity-90 transition-opacity cursor-pointer"
                 />

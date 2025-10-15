@@ -39,7 +39,7 @@ NEXT_PUBLIC_BACKEND_URL=http://localhost:3007
 ## 🌐 Xnode Deployment
 
 Deploy with encrypted datagraph backend:
-- **Frontend**: Port 3000 (public access)
+- **Frontend**: Port 3006 (public access)
 - **Backend**: Port 3007 (internal only)
 - **Security**: Backend protected by firewall rules
 

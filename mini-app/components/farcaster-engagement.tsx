@@ -26,7 +26,7 @@ export function FarcasterEngagement({ postSlug, postTitle, postUrl }: FarcasterE
   useEffect(() => {
     const fetchEngagement = async () => {
       try {
-        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006';
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3007';
         const response = await fetch(`${backendUrl}/api/farcaster/engagement/${postSlug}`);
         
         if (response.ok) {
@@ -49,7 +49,7 @@ export function FarcasterEngagement({ postSlug, postTitle, postUrl }: FarcasterE
 
   const handleShareToFarcaster = async () => {
     try {
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006';
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3007';
       const response = await fetch(`${backendUrl}/api/farcaster/share`, {
         method: 'POST',
         headers: {

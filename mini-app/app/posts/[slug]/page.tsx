@@ -36,7 +36,7 @@ export default function PostPage() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006';
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3007';
         const currentDomain = window.location.hostname;
         const apiUrl = `${backendUrl}/api/posts/${slug}?domain=${encodeURIComponent(currentDomain)}`;
         
@@ -125,7 +125,7 @@ export default function PostPage() {
         
         {post.metadata.coverImageExists && post.metadata.coverImage && (
           <img
-            src={`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006'}/images/${post.metadata.coverImage}`}
+            src={`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3007'}/images/${post.metadata.coverImage}`}
             alt={post.metadata.title}
             className="w-full h-64 object-cover rounded-lg mb-6"
           />
@@ -215,7 +215,7 @@ export default function PostPage() {
               );
             },
             img: ({ src, alt, title }) => {
-              const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3006';
+              const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3007';
               const imageSrc = (typeof src === 'string' && src.startsWith('http')) ? src : `${backendUrl}/images/${src}`;
               return (
                 <img 

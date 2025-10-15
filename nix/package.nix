@@ -1,11 +1,11 @@
-{ pkgs, lib, src }:
+{ pkgs, lib }:
 pkgs.buildNpmPackage {
   pname = "johnny-blog-miniapp";
   version = "1.0.0";
-  src = src + "/mini-app";
+  src = ../mini-app;
 
   npmDeps = pkgs.importNpmLock {
-    npmRoot = src + "/mini-app";
+    npmRoot = ../mini-app;
   };
   npmConfigHook = pkgs.importNpmLock.npmConfigHook;
 
